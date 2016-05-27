@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="default">
+		<class>br.eti.clairton.email.User</class>
+		<class>br.eti.clairton.email.Email.Converter</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
+			
+			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:target/email;hsqldb.lock_file=false;create=true" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="" />
+		</properties>
+	</persistence-unit>
+</persistence>
